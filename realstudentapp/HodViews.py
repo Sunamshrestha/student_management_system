@@ -196,5 +196,5 @@ def edit_student_save(request):
             messages.success(request,"Successfully Edited Student")
             return HttpResponseRedirect("/edit_student/"+student_id)
         except:
-            messages.error(request,"Failed to Edit Staff")
+            messages.error(request,"Failed to Edit Student")
             return HttpResponseRedirect("/edit_student/"+student_id)

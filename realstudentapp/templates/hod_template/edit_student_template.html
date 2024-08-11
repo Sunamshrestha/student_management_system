@@ -3,8 +3,8 @@
 Edit Student  |  Username :  {{ student.admin.username }}  |  #ID : {{ student.admin.id }}
 {% endblock page_tile %}
 {% load static %}
-
 {% block main_content %}
+
 <section class="content">
   <div class="container-fluid">
     <div class="row">
@@ -16,7 +16,7 @@ Edit Student  |  Username :  {{ student.admin.username }}  |  #ID : {{ student.a
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form role="form" action="/edit_student_save" method="post">
+          <form role="form" action="/edit_student_save" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="card-body">
               <div class="form-group">
@@ -26,7 +26,7 @@ Edit Student  |  Username :  {{ student.admin.username }}  |  #ID : {{ student.a
               
               <div class="form-group">
                 <label>First Name</label>
-                <input type="text" class="form-control" placeholder="First Name" name="first_name"    value="{{ student.admin.first_name }}">
+                <input type="text" class="form-control" placeholder="First Name" name="first_name" value="{{ student.admin.first_name }}">
               </div>
               <div class="form-group">
                 <label>Last Name</label>
@@ -35,7 +35,7 @@ Edit Student  |  Username :  {{ student.admin.username }}  |  #ID : {{ student.a
               <div class="form-group">
                 <label>Username</label>
                 <input type="text" class="form-control" placeholder="Username" name="username"  value="{{ student.admin.username }}">
-                <input type="hidden" class="form-control"   value="{{ student.admin.id }}">
+                <input type="hidden" name="student_id" value="{{ student.admin.id }}">
               </div>
               <div class="form-group">
                 <label>Address</label>
