@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import reverse
+from realstudentapp.forms import AddStudentForm
 from realstudentapp.models import Courses, CustomUser, Staffs, Students, Subjects
 from django.core.files.storage import FileSystemStorage
 
@@ -53,7 +54,8 @@ def add_course_save(request):
 
 def add_student(request):
     courses = Courses.objects.all()
-    return render(request,"hod_template/add_student_template.html",{"courses":courses})
+    form = AddStudentForm()
+    return render(request,"hod_template/add_student_template.html",{"courses":courses,"form":form})
 
 def add_student_save(request):
     if request.method != "POST":
