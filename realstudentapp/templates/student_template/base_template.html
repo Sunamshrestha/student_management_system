@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Student Managemnent System  |  Staff Login</title>
+  <title>Student Managemnent System  |  Student panel</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Font Awesome -->
@@ -43,7 +43,7 @@
         </li>
 
       </ul>
-      <h4 style="margin-left: 10px; margin-top: 5px;">Student Management System  |  Staff Panel</h4>
+      <h4 style="margin-left: 10px; margin-top: 5px;">Student Management System  |  Student Panel</h4>
       <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->
         
@@ -64,7 +64,7 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    {% include 'staff_template/sidebar_template.html' with user=user id=id %}
+    {% include 'student_template/sidebar_template.html' with user=user id=id %}
 
     <!-- Content Header (Page header) -->
 
@@ -99,7 +99,7 @@
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    {% include 'staff_template/footer.html' %}
+    {% include 'student_template/footer.html' %}
 
 
     <!-- Control Sidebar -->
