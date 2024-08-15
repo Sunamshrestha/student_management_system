@@ -60,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "realstudentapp.LoginCheckMiddleWare.LoginCheckMiddleWare",
 ]
 
 ROOT_URLCONF = "studentapp.urls"
