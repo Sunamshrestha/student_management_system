@@ -6,24 +6,25 @@ class LoginCheckMiddleWare(MiddlewareMixin):
 
     def process_view(self,request,view_func,view_args,view_kwargs):
         modulename=view_func.__module__
+        print(modulename)
         user=request.user
         if user.is_authenticated:
             if user.user_type == "1":
                 if modulename == "realstudentapp.HodViews":
                     pass
-                elif modulename == "realstudentapp.views":
+                elif modulename == "realstudentapp.views" or modulename == "django.views.static":
                     pass
                 else:
                     return HttpResponseRedirect(reverse("admin_home"))
             elif user.user_type == "2":
                 if modulename == "realstudentapp.StaffViews":
                     pass
-                elif modulename == "realtudentapp.views":
+                elif modulename == "realtudentapp.views" or modulename == "django.views.static":
                     pass
                 else:
                     return HttpResponseRedirect(reverse("staff_home"))
             elif user.user_type == "3":
-                if modulename == "realstudentapp.StudentViews":
+                if modulename == "realstudentapp.StudentViews" or modulename == "django.views.static":
                     pass
                 elif modulename == "realstudentapp.views":
                     pass
